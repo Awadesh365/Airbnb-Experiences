@@ -1,6 +1,8 @@
 
 This Project is Live at: https://airbnb-clone-with-nextjs.vercel.app/
 
+React/JAVASCRIPT/AMPLICATION
+
 ## FUTURE Features
 - Payment Gateway integration
 - infinite sources of rentals -> using APS's or something
