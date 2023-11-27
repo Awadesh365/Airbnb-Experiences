@@ -7,7 +7,11 @@ import { DefaultAuthGuard } from "./defaultAuth.guard";
 
 export class GqlDefaultAuthGuard extends DefaultAuthGuard {
   // This method is required for the interface - do not delete it.
+<<<<<<< HEAD
   getRequest<Request>(context: ExecutionContext): Request {
+=======
+  getRequest(context: ExecutionContext): Request {
+>>>>>>> main
     const ctx = GqlExecutionContext.create(context);
     return ctx.getContext<{ req: Request }>().req;
   }

@@ -1,70 +1,57 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# nextjs-airbnb-clone
 
-## Available Scripts
+# App Screenshots
 
-In the project directory, you can run:
+## Home Page List View
 
-### `npm start`
+![Airbnb-Clone](https://github.com/koolkishan/nextjs-airbnb-clone/assets/30298996/fbbaf229-c068-40c4-a65f-6cf5d32fc32a)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Home Page Map View
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![uisearc](https://github.com/koolkishan/nextjs-airbnb-clone/assets/30298996/1c2feba3-52b5-4554-86cb-9719c104f09a)
 
-### `npm test`
+## Login Modal
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![login](https://github.com/koolkishan/nextjs-airbnb-clone/assets/30298996/ec3d0747-806e-4bb0-91dd-6b4e36594119)
 
-### `npm run build`
+## Scheduler UI
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Scheduler](https://github.com/koolkishan/nextjs-airbnb-clone/assets/30298996/1be02fc9-43e3-4236-b28d-263032857e4f)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Search Listings
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![search](https://github.com/koolkishan/nextjs-airbnb-clone/assets/30298996/b1d22787-df9a-4012-b5f6-5d5e09124eb4)
 
-### `npm run eject`
+## Add New Listings
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![process1](https://github.com/koolkishan/nextjs-airbnb-clone/assets/30298996/42b32543-5675-4572-8af8-a09aa87adca5)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![process2](https://github.com/koolkishan/nextjs-airbnb-clone/assets/30298996/6f261118-c03e-4203-b4ba-7b3b2ae7ccd3)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![process3](https://github.com/koolkishan/nextjs-airbnb-clone/assets/30298996/547b7a96-95de-43e0-bd79-19ce6d11eb44)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![process4](https://github.com/koolkishan/nextjs-airbnb-clone/assets/30298996/16b79d34-2f1b-484b-bd2d-ac46604c21a6)
 
-## Learn More
+![process5](https://github.com/koolkishan/nextjs-airbnb-clone/assets/30298996/47bade4d-7372-4ccd-9bb5-31525db15780)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![process6](https://github.com/koolkishan/nextjs-airbnb-clone/assets/30298996/675ca549-fbe0-498b-bc4d-5b1f113bd15c)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![process7](https://github.com/koolkishan/nextjs-airbnb-clone/assets/30298996/7db9384e-d3dd-4a2a-9100-a3e0d0d1c38f)
 
-### Code Splitting
+![process8](https://github.com/koolkishan/nextjs-airbnb-clone/assets/30298996/2f8cc2ad-161e-4095-9dd0-a64c9bd27d88)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## My Listings
 
-### Analyzing the Bundle Size
+![mylistings](https://github.com/koolkishan/nextjs-airbnb-clone/assets/30298996/e69a8034-cc5a-4dd3-be54-982acd21313c)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Wishlists
 
-### Making a Progressive Web App
+![wishlists](https://github.com/koolkishan/nextjs-airbnb-clone/assets/30298996/6ac53b38-3587-4755-8c5a-a84aee15e613)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Listing Info Page
 
-### Advanced Configuration
+![listing](https://github.com/koolkishan/nextjs-airbnb-clone/assets/30298996/d1f3b96b-55d2-4ebb-8944-bf35238c3f0c)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

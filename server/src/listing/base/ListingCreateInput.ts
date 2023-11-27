@@ -11,14 +11,26 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
+<<<<<<< HEAD
 import { IsString, IsOptional } from "class-validator";
 import { IsJSONValue } from "@app/custom-validators";
 import { GraphQLJSON } from "graphql-type-json";
 import { InputJsonValue } from "../../types";
+=======
+import { IsString, ValidateNested, IsInt, IsOptional } from "class-validator";
+import { UserWhereUniqueInput } from "../../user/base/UserWhereUniqueInput";
+import { Type } from "class-transformer";
+import { IsJSONValue } from "@app/custom-validators";
+import { GraphQLJSON } from "graphql-type-json";
+import { InputJsonValue } from "../../types";
+import { TripCreateNestedManyWithoutListingsInput } from "./TripCreateNestedManyWithoutListingsInput";
+import { WishlistCreateNestedManyWithoutListingsInput } from "./WishlistCreateNestedManyWithoutListingsInput";
+>>>>>>> main
 
 @InputType()
 class ListingCreateInput {
   @ApiProperty({
+<<<<<<< HEAD
     required: false,
     type: String,
   })
@@ -28,6 +40,23 @@ class ListingCreateInput {
     nullable: true,
   })
   listingCreatedBy?: string | null;
+=======
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  description!: string;
+
+  @ApiProperty({
+    required: true,
+    type: () => UserWhereUniqueInput,
+  })
+  @ValidateNested()
+  @Type(() => UserWhereUniqueInput)
+  @Field(() => UserWhereUniqueInput)
+  listingCreatedBy!: UserWhereUniqueInput;
+>>>>>>> main
 
   @ApiProperty({
     required: true,
@@ -56,7 +85,18 @@ class ListingCreateInput {
   })
   @IsJSONValue()
   @Field(() => GraphQLJSON)
+<<<<<<< HEAD
   placeAmeneties!: InputJsonValue;
+=======
+  photos!: InputJsonValue;
+
+  @ApiProperty({
+    required: true,
+  })
+  @IsJSONValue()
+  @Field(() => GraphQLJSON)
+  placeAmeneites!: InputJsonValue;
+>>>>>>> main
 
   @ApiProperty({
     required: true,
@@ -71,7 +111,51 @@ class ListingCreateInput {
   })
   @IsString()
   @Field(() => String)
+<<<<<<< HEAD
   placeType!: string;
+=======
+  placetype!: string;
+
+  @ApiProperty({
+    required: true,
+    type: Number,
+  })
+  @IsInt()
+  @Field(() => Number)
+  price!: number;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  title!: string;
+
+  @ApiProperty({
+    required: false,
+    type: () => TripCreateNestedManyWithoutListingsInput,
+  })
+  @ValidateNested()
+  @Type(() => TripCreateNestedManyWithoutListingsInput)
+  @IsOptional()
+  @Field(() => TripCreateNestedManyWithoutListingsInput, {
+    nullable: true,
+  })
+  trips?: TripCreateNestedManyWithoutListingsInput;
+
+  @ApiProperty({
+    required: false,
+    type: () => WishlistCreateNestedManyWithoutListingsInput,
+  })
+  @ValidateNested()
+  @Type(() => WishlistCreateNestedManyWithoutListingsInput)
+  @IsOptional()
+  @Field(() => WishlistCreateNestedManyWithoutListingsInput, {
+    nullable: true,
+  })
+  wishlists?: WishlistCreateNestedManyWithoutListingsInput;
+>>>>>>> main
 }
 
 export { ListingCreateInput as ListingCreateInput };

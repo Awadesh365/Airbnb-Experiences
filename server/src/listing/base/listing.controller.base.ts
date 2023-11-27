@@ -27,14 +27,32 @@ import { ListingWhereUniqueInput } from "./ListingWhereUniqueInput";
 import { ListingFindManyArgs } from "./ListingFindManyArgs";
 import { ListingUpdateInput } from "./ListingUpdateInput";
 import { Listing } from "./Listing";
+<<<<<<< HEAD
 
 @swagger.ApiBearerAuth()
 @common.UseGuards(defaultAuthGuard.DefaultAuthGuard, nestAccessControl.ACGuard)
+=======
+import { TripFindManyArgs } from "../../trip/base/TripFindManyArgs";
+import { Trip } from "../../trip/base/Trip";
+import { TripWhereUniqueInput } from "../../trip/base/TripWhereUniqueInput";
+import { WishlistFindManyArgs } from "../../wishlist/base/WishlistFindManyArgs";
+import { Wishlist } from "../../wishlist/base/Wishlist";
+import { WishlistWhereUniqueInput } from "../../wishlist/base/WishlistWhereUniqueInput";
+
+>>>>>>> main
 export class ListingControllerBase {
   constructor(
     protected readonly service: ListingService,
     protected readonly rolesBuilder: nestAccessControl.RolesBuilder
   ) {}
+<<<<<<< HEAD
+=======
+  @common.UseGuards(
+    defaultAuthGuard.DefaultAuthGuard,
+    nestAccessControl.ACGuard
+  )
+  @swagger.ApiBearerAuth()
+>>>>>>> main
   @common.UseInterceptors(AclValidateRequestInterceptor)
   @common.Post()
   @swagger.ApiCreatedResponse({ type: Listing })
@@ -48,6 +66,7 @@ export class ListingControllerBase {
   })
   async create(@common.Body() data: ListingCreateInput): Promise<Listing> {
     return await this.service.create({
+<<<<<<< HEAD
       data: data,
       select: {
         createdAt: true,
@@ -59,11 +78,41 @@ export class ListingControllerBase {
         placeAmeneties: true,
         placeSpace: true,
         placeType: true,
+=======
+      data: {
+        ...data,
+
+        listingCreatedBy: {
+          connect: data.listingCreatedBy,
+        },
+      },
+      select: {
+        createdAt: true,
+        description: true,
+        id: true,
+
+        listingCreatedBy: {
+          select: {
+            id: true,
+          },
+        },
+
+        locationData: true,
+        locationType: true,
+        mapData: true,
+        photos: true,
+        placeAmeneites: true,
+        placeSpace: true,
+        placetype: true,
+        price: true,
+        title: true,
+>>>>>>> main
         updatedAt: true,
       },
     });
   }
 
+<<<<<<< HEAD
   @common.UseInterceptors(AclFilterResponseInterceptor)
   @common.Get()
   @swagger.ApiOkResponse({ type: [Listing] })
@@ -76,12 +125,27 @@ export class ListingControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+=======
+  // @common.UseInterceptors(AclFilterResponseInterceptor)
+  @common.Get()
+  @swagger.ApiOkResponse({ type: [Listing] })
+  @ApiNestedQuery(ListingFindManyArgs)
+  // @nestAccessControl.UseRoles({
+  //   resource: "Listing",
+  //   action: "read",
+  //   possession: "any",
+  // })
+  // @swagger.ApiForbiddenResponse({
+  //   type: errors.ForbiddenException,
+  // })
+>>>>>>> main
   async findMany(@common.Req() request: Request): Promise<Listing[]> {
     const args = plainToClass(ListingFindManyArgs, request.query);
     return this.service.findMany({
       ...args,
       select: {
         createdAt: true,
+<<<<<<< HEAD
         id: true,
         listingCreatedBy: true,
         locationData: true,
@@ -90,11 +154,32 @@ export class ListingControllerBase {
         placeAmeneties: true,
         placeSpace: true,
         placeType: true,
+=======
+        description: true,
+        id: true,
+
+        listingCreatedBy: {
+          select: {
+            id: true,
+          },
+        },
+
+        locationData: true,
+        locationType: true,
+        mapData: true,
+        photos: true,
+        placeAmeneites: true,
+        placeSpace: true,
+        placetype: true,
+        price: true,
+        title: true,
+>>>>>>> main
         updatedAt: true,
       },
     });
   }
 
+<<<<<<< HEAD
   @common.UseInterceptors(AclFilterResponseInterceptor)
   @common.Get("/:id")
   @swagger.ApiOkResponse({ type: Listing })
@@ -107,6 +192,20 @@ export class ListingControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+=======
+  // @common.UseInterceptors(AclFilterResponseInterceptor)
+  @common.Get("/:id")
+  @swagger.ApiOkResponse({ type: Listing })
+  @swagger.ApiNotFoundResponse({ type: errors.NotFoundException })
+  // @nestAccessControl.UseRoles({
+  //   resource: "Listing",
+  //   action: "read",
+  //   possession: "own",
+  // })
+  // @swagger.ApiForbiddenResponse({
+  //   type: errors.ForbiddenException,
+  // })
+>>>>>>> main
   async findOne(
     @common.Param() params: ListingWhereUniqueInput
   ): Promise<Listing | null> {
@@ -114,6 +213,7 @@ export class ListingControllerBase {
       where: params,
       select: {
         createdAt: true,
+<<<<<<< HEAD
         id: true,
         listingCreatedBy: true,
         locationData: true,
@@ -122,6 +222,28 @@ export class ListingControllerBase {
         placeAmeneties: true,
         placeSpace: true,
         placeType: true,
+=======
+        description: true,
+        id: true,
+
+        listingCreatedBy: {
+          select: {
+            id: true,
+            firstName: true,
+            lastName: true,
+          },
+        },
+
+        locationData: true,
+        locationType: true,
+        mapData: true,
+        photos: true,
+        placeAmeneites: true,
+        placeSpace: true,
+        placetype: true,
+        price: true,
+        title: true,
+>>>>>>> main
         updatedAt: true,
       },
     });
@@ -145,6 +267,14 @@ export class ListingControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+<<<<<<< HEAD
+=======
+  @common.UseGuards(
+    defaultAuthGuard.DefaultAuthGuard,
+    nestAccessControl.ACGuard
+  )
+  @swagger.ApiBearerAuth()
+>>>>>>> main
   async update(
     @common.Param() params: ListingWhereUniqueInput,
     @common.Body() data: ListingUpdateInput
@@ -152,6 +282,7 @@ export class ListingControllerBase {
     try {
       return await this.service.update({
         where: params,
+<<<<<<< HEAD
         data: data,
         select: {
           createdAt: true,
@@ -163,6 +294,35 @@ export class ListingControllerBase {
           placeAmeneties: true,
           placeSpace: true,
           placeType: true,
+=======
+        data: {
+          ...data,
+
+          listingCreatedBy: {
+            connect: data.listingCreatedBy,
+          },
+        },
+        select: {
+          createdAt: true,
+          description: true,
+          id: true,
+
+          listingCreatedBy: {
+            select: {
+              id: true,
+            },
+          },
+
+          locationData: true,
+          locationType: true,
+          mapData: true,
+          photos: true,
+          placeAmeneites: true,
+          placeSpace: true,
+          placetype: true,
+          price: true,
+          title: true,
+>>>>>>> main
           updatedAt: true,
         },
       });
@@ -187,6 +347,14 @@ export class ListingControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+<<<<<<< HEAD
+=======
+  @common.UseGuards(
+    defaultAuthGuard.DefaultAuthGuard,
+    nestAccessControl.ACGuard
+  )
+  @swagger.ApiBearerAuth()
+>>>>>>> main
   async delete(
     @common.Param() params: ListingWhereUniqueInput
   ): Promise<Listing | null> {
@@ -195,6 +363,7 @@ export class ListingControllerBase {
         where: params,
         select: {
           createdAt: true,
+<<<<<<< HEAD
           id: true,
           listingCreatedBy: true,
           locationData: true,
@@ -203,6 +372,26 @@ export class ListingControllerBase {
           placeAmeneties: true,
           placeSpace: true,
           placeType: true,
+=======
+          description: true,
+          id: true,
+
+          listingCreatedBy: {
+            select: {
+              id: true,
+            },
+          },
+
+          locationData: true,
+          locationType: true,
+          mapData: true,
+          photos: true,
+          placeAmeneites: true,
+          placeSpace: true,
+          placetype: true,
+          price: true,
+          title: true,
+>>>>>>> main
           updatedAt: true,
         },
       });
@@ -215,4 +404,224 @@ export class ListingControllerBase {
       throw error;
     }
   }
+<<<<<<< HEAD
+=======
+
+  @common.UseInterceptors(AclFilterResponseInterceptor)
+  @common.Get("/:id/trips")
+  @ApiNestedQuery(TripFindManyArgs)
+  @nestAccessControl.UseRoles({
+    resource: "Trip",
+    action: "read",
+    possession: "any",
+  })
+  async findManyTrips(
+    @common.Req() request: Request,
+    @common.Param() params: ListingWhereUniqueInput
+  ): Promise<Trip[]> {
+    const query = plainToClass(TripFindManyArgs, request.query);
+    const results = await this.service.findTrips(params.id, {
+      ...query,
+      select: {
+        createdAt: true,
+        id: true,
+
+        listing: {
+          select: {
+            id: true,
+          },
+        },
+
+        tripData: true,
+        updatedAt: true,
+
+        user: {
+          select: {
+            id: true,
+          },
+        },
+      },
+    });
+    if (results === null) {
+      throw new errors.NotFoundException(
+        `No resource was found for ${JSON.stringify(params)}`
+      );
+    }
+    return results;
+  }
+
+  @common.Post("/:id/trips")
+  @nestAccessControl.UseRoles({
+    resource: "Listing",
+    action: "update",
+    possession: "any",
+  })
+  async connectTrips(
+    @common.Param() params: ListingWhereUniqueInput,
+    @common.Body() body: TripWhereUniqueInput[]
+  ): Promise<void> {
+    const data = {
+      trips: {
+        connect: body,
+      },
+    };
+    await this.service.update({
+      where: params,
+      data,
+      select: { id: true },
+    });
+  }
+
+  @common.Patch("/:id/trips")
+  @nestAccessControl.UseRoles({
+    resource: "Listing",
+    action: "update",
+    possession: "any",
+  })
+  async updateTrips(
+    @common.Param() params: ListingWhereUniqueInput,
+    @common.Body() body: TripWhereUniqueInput[]
+  ): Promise<void> {
+    const data = {
+      trips: {
+        set: body,
+      },
+    };
+    await this.service.update({
+      where: params,
+      data,
+      select: { id: true },
+    });
+  }
+
+  @common.Delete("/:id/trips")
+  @nestAccessControl.UseRoles({
+    resource: "Listing",
+    action: "update",
+    possession: "any",
+  })
+  async disconnectTrips(
+    @common.Param() params: ListingWhereUniqueInput,
+    @common.Body() body: TripWhereUniqueInput[]
+  ): Promise<void> {
+    const data = {
+      trips: {
+        disconnect: body,
+      },
+    };
+    await this.service.update({
+      where: params,
+      data,
+      select: { id: true },
+    });
+  }
+
+  @common.UseInterceptors(AclFilterResponseInterceptor)
+  @common.Get("/:id/wishlists")
+  @ApiNestedQuery(WishlistFindManyArgs)
+  @nestAccessControl.UseRoles({
+    resource: "Wishlist",
+    action: "read",
+    possession: "any",
+  })
+  async findManyWishlists(
+    @common.Req() request: Request,
+    @common.Param() params: ListingWhereUniqueInput
+  ): Promise<Wishlist[]> {
+    const query = plainToClass(WishlistFindManyArgs, request.query);
+    const results = await this.service.findWishlists(params.id, {
+      ...query,
+      select: {
+        createdAt: true,
+        id: true,
+
+        listing: {
+          select: {
+            id: true,
+          },
+        },
+
+        updatedAt: true,
+
+        user: {
+          select: {
+            id: true,
+          },
+        },
+      },
+    });
+    if (results === null) {
+      throw new errors.NotFoundException(
+        `No resource was found for ${JSON.stringify(params)}`
+      );
+    }
+    return results;
+  }
+
+  @common.Post("/:id/wishlists")
+  @nestAccessControl.UseRoles({
+    resource: "Listing",
+    action: "update",
+    possession: "any",
+  })
+  async connectWishlists(
+    @common.Param() params: ListingWhereUniqueInput,
+    @common.Body() body: WishlistWhereUniqueInput[]
+  ): Promise<void> {
+    const data = {
+      wishlists: {
+        connect: body,
+      },
+    };
+    await this.service.update({
+      where: params,
+      data,
+      select: { id: true },
+    });
+  }
+
+  @common.Patch("/:id/wishlists")
+  @nestAccessControl.UseRoles({
+    resource: "Listing",
+    action: "update",
+    possession: "any",
+  })
+  async updateWishlists(
+    @common.Param() params: ListingWhereUniqueInput,
+    @common.Body() body: WishlistWhereUniqueInput[]
+  ): Promise<void> {
+    const data = {
+      wishlists: {
+        set: body,
+      },
+    };
+    await this.service.update({
+      where: params,
+      data,
+      select: { id: true },
+    });
+  }
+
+  @common.Delete("/:id/wishlists")
+  @nestAccessControl.UseRoles({
+    resource: "Listing",
+    action: "update",
+    possession: "any",
+  })
+  async disconnectWishlists(
+    @common.Param() params: ListingWhereUniqueInput,
+    @common.Body() body: WishlistWhereUniqueInput[]
+  ): Promise<void> {
+    const data = {
+      wishlists: {
+        disconnect: body,
+      },
+    };
+    await this.service.update({
+      where: params,
+      data,
+      select: { id: true },
+    });
+  }
+>>>>>>> main
 }

@@ -1,11 +1,20 @@
 import { UnauthorizedException } from "@nestjs/common";
 import { mock } from "jest-mock-extended";
 import { JwtStrategyBase } from "../../../auth/jwt/base/jwt.strategy.base";
+<<<<<<< HEAD
 import { TEST_USER } from "../constants";
 import { UserService } from "../../../user/user.service";
 describe("Testing the jwtStrategyBase.validate()", () => {
   const userService = mock<UserService>();
   const jwtStrategy = new JwtStrategyBase("Secrete", userService);
+=======
+import { UserService } from "../../../user/user.service";
+import { TEST_USER } from "../constants";
+
+describe("Testing the jwtStrategyBase.validate()", () => {
+  const userService = mock<UserService>();
+  const jwtStrategy = new JwtStrategyBase(userService, "Secrete");
+>>>>>>> main
   beforeEach(() => {
     userService.findOne.mockClear();
   });

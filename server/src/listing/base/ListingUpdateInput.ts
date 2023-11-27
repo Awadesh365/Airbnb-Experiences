@@ -11,10 +11,21 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
+<<<<<<< HEAD
 import { IsString, IsOptional } from "class-validator";
 import { IsJSONValue } from "@app/custom-validators";
 import { GraphQLJSON } from "graphql-type-json";
 import { InputJsonValue } from "../../types";
+=======
+import { IsString, IsOptional, ValidateNested, IsInt } from "class-validator";
+import { UserWhereUniqueInput } from "../../user/base/UserWhereUniqueInput";
+import { Type } from "class-transformer";
+import { IsJSONValue } from "@app/custom-validators";
+import { GraphQLJSON } from "graphql-type-json";
+import { InputJsonValue } from "../../types";
+import { TripUpdateManyWithoutListingsInput } from "./TripUpdateManyWithoutListingsInput";
+import { WishlistUpdateManyWithoutListingsInput } from "./WishlistUpdateManyWithoutListingsInput";
+>>>>>>> main
 
 @InputType()
 class ListingUpdateInput {
@@ -27,7 +38,23 @@ class ListingUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
+<<<<<<< HEAD
   listingCreatedBy?: string | null;
+=======
+  description?: string;
+
+  @ApiProperty({
+    required: false,
+    type: () => UserWhereUniqueInput,
+  })
+  @ValidateNested()
+  @Type(() => UserWhereUniqueInput)
+  @IsOptional()
+  @Field(() => UserWhereUniqueInput, {
+    nullable: true,
+  })
+  listingCreatedBy?: UserWhereUniqueInput;
+>>>>>>> main
 
   @ApiProperty({
     required: false,
@@ -68,7 +95,21 @@ class ListingUpdateInput {
   @Field(() => GraphQLJSON, {
     nullable: true,
   })
+<<<<<<< HEAD
   placeAmeneties?: InputJsonValue;
+=======
+  photos?: InputJsonValue;
+
+  @ApiProperty({
+    required: false,
+  })
+  @IsJSONValue()
+  @IsOptional()
+  @Field(() => GraphQLJSON, {
+    nullable: true,
+  })
+  placeAmeneites?: InputJsonValue;
+>>>>>>> main
 
   @ApiProperty({
     required: false,
@@ -89,7 +130,57 @@ class ListingUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
+<<<<<<< HEAD
   placeType?: string;
+=======
+  placetype?: string;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsInt()
+  @IsOptional()
+  @Field(() => Number, {
+    nullable: true,
+  })
+  price?: number;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  title?: string;
+
+  @ApiProperty({
+    required: false,
+    type: () => TripUpdateManyWithoutListingsInput,
+  })
+  @ValidateNested()
+  @Type(() => TripUpdateManyWithoutListingsInput)
+  @IsOptional()
+  @Field(() => TripUpdateManyWithoutListingsInput, {
+    nullable: true,
+  })
+  trips?: TripUpdateManyWithoutListingsInput;
+
+  @ApiProperty({
+    required: false,
+    type: () => WishlistUpdateManyWithoutListingsInput,
+  })
+  @ValidateNested()
+  @Type(() => WishlistUpdateManyWithoutListingsInput)
+  @IsOptional()
+  @Field(() => WishlistUpdateManyWithoutListingsInput, {
+    nullable: true,
+  })
+  wishlists?: WishlistUpdateManyWithoutListingsInput;
+>>>>>>> main
 }
 
 export { ListingUpdateInput as ListingUpdateInput };

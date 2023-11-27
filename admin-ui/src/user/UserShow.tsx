@@ -1,12 +1,27 @@
 import * as React from "react";
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
 import {
   Show,
   SimpleShowLayout,
   ShowProps,
   DateField,
   TextField,
+<<<<<<< HEAD
 } from "react-admin";
 
+=======
+  ReferenceManyField,
+  Datagrid,
+  ReferenceField,
+} from "react-admin";
+
+import { USER_TITLE_FIELD } from "./UserTitle";
+import { LISTING_TITLE_FIELD } from "../listing/ListingTitle";
+
+>>>>>>> main
 export const UserShow = (props: ShowProps): React.ReactElement => {
   return (
     <Show {...props}>
@@ -18,6 +33,76 @@ export const UserShow = (props: ShowProps): React.ReactElement => {
         <TextField label="Roles" source="roles" />
         <DateField source="updatedAt" label="Updated At" />
         <TextField label="Username" source="username" />
+<<<<<<< HEAD
+=======
+        <ReferenceManyField
+          reference="Listing"
+          target="listingCreatedById"
+          label="listings"
+        >
+          <Datagrid rowClick="show">
+            <DateField source="createdAt" label="Created At" />
+            <TextField label="description" source="description" />
+            <TextField label="ID" source="id" />
+            <ReferenceField
+              label="listingCreatedBy"
+              source="user.id"
+              reference="User"
+            >
+              <TextField source={USER_TITLE_FIELD} />
+            </ReferenceField>
+            <TextField label="locationData" source="locationData" />
+            <TextField label="locationType" source="locationType" />
+            <TextField label="mapData" source="mapData" />
+            <TextField label="photos" source="photos" />
+            <TextField label="placeAmeneites" source="placeAmeneites" />
+            <TextField label="placeSpace" source="placeSpace" />
+            <TextField label="placetype" source="placetype" />
+            <TextField label="price" source="price" />
+            <TextField label="title" source="title" />
+            <DateField source="updatedAt" label="Updated At" />
+          </Datagrid>
+        </ReferenceManyField>
+        <ReferenceManyField reference="Trip" target="userId" label="trips">
+          <Datagrid rowClick="show">
+            <DateField source="createdAt" label="Created At" />
+            <TextField label="ID" source="id" />
+            <ReferenceField
+              label="listing"
+              source="listing.id"
+              reference="Listing"
+            >
+              <TextField source={LISTING_TITLE_FIELD} />
+            </ReferenceField>
+            <TextField label="tripData" source="tripData" />
+            <DateField source="updatedAt" label="Updated At" />
+            <ReferenceField label="user" source="user.id" reference="User">
+              <TextField source={USER_TITLE_FIELD} />
+            </ReferenceField>
+          </Datagrid>
+        </ReferenceManyField>
+        <ReferenceManyField
+          reference="Wishlist"
+          target="userId"
+          label="wishlists"
+        >
+          <Datagrid rowClick="show">
+            <DateField source="createdAt" label="Created At" />
+            <TextField label="ID" source="id" />
+            <ReferenceField
+              label="listing"
+              source="listing.id"
+              reference="Listing"
+            >
+              <TextField source={LISTING_TITLE_FIELD} />
+            </ReferenceField>
+            <DateField source="updatedAt" label="Updated At" />
+            <ReferenceField label="user" source="user.id" reference="User">
+              <TextField source={USER_TITLE_FIELD} />
+            </ReferenceField>
+          </Datagrid>
+        </ReferenceManyField>
+>>>>>>> main
       </SimpleShowLayout>
     </Show>
   );

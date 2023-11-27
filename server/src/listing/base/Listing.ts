@@ -11,11 +11,28 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
+<<<<<<< HEAD
 import { IsDate, IsString, IsOptional } from "class-validator";
 import { Type } from "class-transformer";
 import { IsJSONValue } from "@app/custom-validators";
 import { GraphQLJSON } from "graphql-type-json";
 import { JsonValue } from "type-fest";
+=======
+import {
+  IsDate,
+  IsString,
+  ValidateNested,
+  IsInt,
+  IsOptional,
+} from "class-validator";
+import { Type } from "class-transformer";
+import { User } from "../../user/base/User";
+import { IsJSONValue } from "@app/custom-validators";
+import { GraphQLJSON } from "graphql-type-json";
+import { JsonValue } from "type-fest";
+import { Trip } from "../../trip/base/Trip";
+import { Wishlist } from "../../wishlist/base/Wishlist";
+>>>>>>> main
 
 @ObjectType()
 class Listing {
@@ -33,6 +50,7 @@ class Listing {
   })
   @IsString()
   @Field(() => String)
+<<<<<<< HEAD
   id!: string;
 
   @ApiProperty({
@@ -45,6 +63,25 @@ class Listing {
     nullable: true,
   })
   listingCreatedBy!: string | null;
+=======
+  description!: string;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  id!: string;
+
+  @ApiProperty({
+    required: true,
+    type: () => User,
+  })
+  @ValidateNested()
+  @Type(() => User)
+  listingCreatedBy?: User;
+>>>>>>> main
 
   @ApiProperty({
     required: true,
@@ -73,7 +110,18 @@ class Listing {
   })
   @IsJSONValue()
   @Field(() => GraphQLJSON)
+<<<<<<< HEAD
   placeAmeneties!: JsonValue;
+=======
+  photos!: JsonValue;
+
+  @ApiProperty({
+    required: true,
+  })
+  @IsJSONValue()
+  @Field(() => GraphQLJSON)
+  placeAmeneites!: JsonValue;
+>>>>>>> main
 
   @ApiProperty({
     required: true,
@@ -88,7 +136,36 @@ class Listing {
   })
   @IsString()
   @Field(() => String)
+<<<<<<< HEAD
   placeType!: string;
+=======
+  placetype!: string;
+
+  @ApiProperty({
+    required: true,
+    type: Number,
+  })
+  @IsInt()
+  @Field(() => Number)
+  price!: number;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  title!: string;
+
+  @ApiProperty({
+    required: false,
+    type: () => [Trip],
+  })
+  @ValidateNested()
+  @Type(() => Trip)
+  @IsOptional()
+  trips?: Array<Trip>;
+>>>>>>> main
 
   @ApiProperty({
     required: true,
@@ -97,6 +174,18 @@ class Listing {
   @Type(() => Date)
   @Field(() => Date)
   updatedAt!: Date;
+<<<<<<< HEAD
+=======
+
+  @ApiProperty({
+    required: false,
+    type: () => [Wishlist],
+  })
+  @ValidateNested()
+  @Type(() => Wishlist)
+  @IsOptional()
+  wishlists?: Array<Wishlist>;
+>>>>>>> main
 }
 
 export { Listing as Listing };
