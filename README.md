@@ -7,4 +7,5 @@ This Project is Live at: https://airbnb-clone-with-nextjs.vercel.app/
 - Better User Experience.
 
 
-
+## we have only worked on front end
+- other then everything from authentication to server(backend) to database to everything is done by "amplification".
