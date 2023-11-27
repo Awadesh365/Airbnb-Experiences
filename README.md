@@ -1,6 +1,9 @@
 
 This Project is Live at: https://airbnb-clone-with-nextjs.vercel.app/
 
+ppt:- https://docs.google.com/presentation/d/e/2PACX-1vSaf5Nnmsx79ZKsSPTcZ_y24ZAGd8RPWjI0iCOv0pwmwj-e5FB-LzPXO7VEqnp-RoPEKsA2X-0DxBFO/pub?start=false&loop=false&delayms=3000
+
+
 React/JAVASCRIPT/AMPLICATION
 
 ## FUTURE Features
