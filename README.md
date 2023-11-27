@@ -1,7 +1,6 @@
 
-# nextjs-airbnb-clone
+This Project is Live at: https://airbnb-clone-with-nextjs.vercel.app/
 
-# App Screenshots
 
 ## Home Page List View
 
