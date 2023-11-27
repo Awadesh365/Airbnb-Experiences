@@ -6,7 +6,10 @@ import {
   CallHandler,
 } from "@nestjs/common";
 import request from "supertest";
+<<<<<<< HEAD
+=======
 import { MorganModule } from "nest-morgan";
+>>>>>>> main
 import { ACGuard } from "nest-access-control";
 import { DefaultAuthGuard } from "../../auth/defaultAuth.guard";
 import { ACLModule } from "../../auth/acl.module";
@@ -20,44 +23,72 @@ const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
   createdAt: new Date(),
+<<<<<<< HEAD
+  id: "exampleId",
+  listingCreatedBy: "exampleListingCreatedBy",
+  locationType: "exampleLocationType",
+  placeType: "examplePlaceType",
+=======
   description: "exampleDescription",
   id: "exampleId",
   locationType: "exampleLocationType",
   placetype: "examplePlacetype",
   price: 42,
   title: "exampleTitle",
+>>>>>>> main
   updatedAt: new Date(),
 };
 const CREATE_RESULT = {
   createdAt: new Date(),
+<<<<<<< HEAD
+  id: "exampleId",
+  listingCreatedBy: "exampleListingCreatedBy",
+  locationType: "exampleLocationType",
+  placeType: "examplePlaceType",
+=======
   description: "exampleDescription",
   id: "exampleId",
   locationType: "exampleLocationType",
   placetype: "examplePlacetype",
   price: 42,
   title: "exampleTitle",
+>>>>>>> main
   updatedAt: new Date(),
 };
 const FIND_MANY_RESULT = [
   {
     createdAt: new Date(),
+<<<<<<< HEAD
+    id: "exampleId",
+    listingCreatedBy: "exampleListingCreatedBy",
+    locationType: "exampleLocationType",
+    placeType: "examplePlaceType",
+=======
     description: "exampleDescription",
     id: "exampleId",
     locationType: "exampleLocationType",
     placetype: "examplePlacetype",
     price: 42,
     title: "exampleTitle",
+>>>>>>> main
     updatedAt: new Date(),
   },
 ];
 const FIND_ONE_RESULT = {
   createdAt: new Date(),
+<<<<<<< HEAD
+  id: "exampleId",
+  listingCreatedBy: "exampleListingCreatedBy",
+  locationType: "exampleLocationType",
+  placeType: "examplePlaceType",
+=======
   description: "exampleDescription",
   id: "exampleId",
   locationType: "exampleLocationType",
   placetype: "examplePlacetype",
   price: 42,
   title: "exampleTitle",
+>>>>>>> main
   updatedAt: new Date(),
 };
 
@@ -120,7 +151,11 @@ describe("Listing", () => {
         },
       ],
       controllers: [ListingController],
+<<<<<<< HEAD
+      imports: [ACLModule],
+=======
       imports: [MorganModule.forRoot(), ACLModule],
+>>>>>>> main
     })
       .overrideGuard(DefaultAuthGuard)
       .useValue(basicAuthGuard)
@@ -184,7 +219,11 @@ describe("Listing", () => {
   });
 
   test("POST /listings existing resource", async () => {
+<<<<<<< HEAD
+    const agent = request(app.getHttpServer());
+=======
     let agent = request(app.getHttpServer());
+>>>>>>> main
     await agent
       .post("/listings")
       .send(CREATE_INPUT)

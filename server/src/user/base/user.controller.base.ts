@@ -27,6 +27,8 @@ import { UserWhereUniqueInput } from "./UserWhereUniqueInput";
 import { UserFindManyArgs } from "./UserFindManyArgs";
 import { UserUpdateInput } from "./UserUpdateInput";
 import { User } from "./User";
+<<<<<<< HEAD
+=======
 import { ListingFindManyArgs } from "../../listing/base/ListingFindManyArgs";
 import { Listing } from "../../listing/base/Listing";
 import { ListingWhereUniqueInput } from "../../listing/base/ListingWhereUniqueInput";
@@ -36,6 +38,7 @@ import { TripWhereUniqueInput } from "../../trip/base/TripWhereUniqueInput";
 import { WishlistFindManyArgs } from "../../wishlist/base/WishlistFindManyArgs";
 import { Wishlist } from "../../wishlist/base/Wishlist";
 import { WishlistWhereUniqueInput } from "../../wishlist/base/WishlistWhereUniqueInput";
+>>>>>>> main
 
 @swagger.ApiBearerAuth()
 @common.UseGuards(defaultAuthGuard.DefaultAuthGuard, nestAccessControl.ACGuard)
@@ -209,6 +212,8 @@ export class UserControllerBase {
       throw error;
     }
   }
+<<<<<<< HEAD
+=======
 
   @common.UseInterceptors(AclFilterResponseInterceptor)
   @common.Get("/:id/listings")
@@ -538,4 +543,5 @@ export class UserControllerBase {
       select: { id: true },
     });
   }
+>>>>>>> main
 }

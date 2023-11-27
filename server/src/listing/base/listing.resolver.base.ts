@@ -10,7 +10,11 @@ https://docs.amplication.com/how-to/custom-code
 ------------------------------------------------------------------------------
   */
 import * as graphql from "@nestjs/graphql";
+<<<<<<< HEAD
+import { GraphQLError } from "graphql";
+=======
 import * as apollo from "apollo-server-express";
+>>>>>>> main
 import { isRecordNotFoundError } from "../../prisma.util";
 import { MetaQueryPayload } from "../../util/MetaQueryPayload";
 import * as nestAccessControl from "nest-access-control";
@@ -26,11 +30,14 @@ import { ListingCountArgs } from "./ListingCountArgs";
 import { ListingFindManyArgs } from "./ListingFindManyArgs";
 import { ListingFindUniqueArgs } from "./ListingFindUniqueArgs";
 import { Listing } from "./Listing";
+<<<<<<< HEAD
+=======
 import { TripFindManyArgs } from "../../trip/base/TripFindManyArgs";
 import { Trip } from "../../trip/base/Trip";
 import { WishlistFindManyArgs } from "../../wishlist/base/WishlistFindManyArgs";
 import { Wishlist } from "../../wishlist/base/Wishlist";
 import { User } from "../../user/base/User";
+>>>>>>> main
 import { ListingService } from "../listing.service";
 @common.UseGuards(GqlDefaultAuthGuard, gqlACGuard.GqlACGuard)
 @graphql.Resolver(() => Listing)
@@ -97,6 +104,9 @@ export class ListingResolverBase {
   ): Promise<Listing> {
     return await this.service.create({
       ...args,
+<<<<<<< HEAD
+      data: args.data,
+=======
       data: {
         ...args.data,
 
@@ -104,6 +114,7 @@ export class ListingResolverBase {
           connect: args.data.listingCreatedBy,
         },
       },
+>>>>>>> main
     });
   }
 
@@ -120,6 +131,13 @@ export class ListingResolverBase {
     try {
       return await this.service.update({
         ...args,
+<<<<<<< HEAD
+        data: args.data,
+      });
+    } catch (error) {
+      if (isRecordNotFoundError(error)) {
+        throw new GraphQLError(
+=======
         data: {
           ...args.data,
 
@@ -131,6 +149,7 @@ export class ListingResolverBase {
     } catch (error) {
       if (isRecordNotFoundError(error)) {
         throw new apollo.ApolloError(
+>>>>>>> main
           `No resource was found for ${JSON.stringify(args.where)}`
         );
       }
@@ -151,13 +170,19 @@ export class ListingResolverBase {
       return await this.service.delete(args);
     } catch (error) {
       if (isRecordNotFoundError(error)) {
+<<<<<<< HEAD
+        throw new GraphQLError(
+=======
         throw new apollo.ApolloError(
+>>>>>>> main
           `No resource was found for ${JSON.stringify(args.where)}`
         );
       }
       throw error;
     }
   }
+<<<<<<< HEAD
+=======
 
   @common.UseInterceptors(AclFilterResponseInterceptor)
   @graphql.ResolveField(() => [Trip], { name: "trips" })
@@ -219,4 +244,5 @@ export class ListingResolverBase {
     }
     return result;
   }
+>>>>>>> main
 }

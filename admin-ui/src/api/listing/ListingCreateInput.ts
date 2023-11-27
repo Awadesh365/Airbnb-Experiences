@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+import { InputJsonValue } from "../../types";
+
+export type ListingCreateInput = {
+  listingCreatedBy?: string | null;
+  locationData: InputJsonValue;
+  locationType: string;
+  mapData: InputJsonValue;
+  placeAmeneties: InputJsonValue;
+  placeSpace: InputJsonValue;
+  placeType: string;
+=======
 import { UserWhereUniqueInput } from "../user/UserWhereUniqueInput";
 import { InputJsonValue } from "../../types";
 import { TripCreateNestedManyWithoutListingsInput } from "./TripCreateNestedManyWithoutListingsInput";
@@ -17,4 +29,5 @@ export type ListingCreateInput = {
   title: string;
   trips?: TripCreateNestedManyWithoutListingsInput;
   wishlists?: WishlistCreateNestedManyWithoutListingsInput;
+>>>>>>> main
 };

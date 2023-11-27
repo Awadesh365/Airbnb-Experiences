@@ -11,6 +11,12 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
+<<<<<<< HEAD
+import { IsString, IsOptional } from "class-validator";
+import { IsJSONValue } from "@app/custom-validators";
+import { GraphQLJSON } from "graphql-type-json";
+import { InputJsonValue } from "../../types";
+=======
 import { IsString, IsOptional, ValidateNested } from "class-validator";
 import { ListingUpdateManyWithoutUsersInput } from "./ListingUpdateManyWithoutUsersInput";
 import { Type } from "class-transformer";
@@ -19,6 +25,7 @@ import { GraphQLJSON } from "graphql-type-json";
 import { InputJsonValue } from "../../types";
 import { TripUpdateManyWithoutUsersInput } from "./TripUpdateManyWithoutUsersInput";
 import { WishlistUpdateManyWithoutUsersInput } from "./WishlistUpdateManyWithoutUsersInput";
+>>>>>>> main
 
 @InputType()
 class UserUpdateInput {
@@ -46,6 +53,8 @@ class UserUpdateInput {
 
   @ApiProperty({
     required: false,
+<<<<<<< HEAD
+=======
     type: () => ListingUpdateManyWithoutUsersInput,
   })
   @ValidateNested()
@@ -58,6 +67,7 @@ class UserUpdateInput {
 
   @ApiProperty({
     required: false,
+>>>>>>> main
     type: String,
   })
   @IsString()
@@ -79,6 +89,8 @@ class UserUpdateInput {
 
   @ApiProperty({
     required: false,
+<<<<<<< HEAD
+=======
     type: () => TripUpdateManyWithoutUsersInput,
   })
   @ValidateNested()
@@ -91,6 +103,7 @@ class UserUpdateInput {
 
   @ApiProperty({
     required: false,
+>>>>>>> main
     type: String,
   })
   @IsString()
@@ -99,6 +112,8 @@ class UserUpdateInput {
     nullable: true,
   })
   username?: string;
+<<<<<<< HEAD
+=======
 
   @ApiProperty({
     required: false,
@@ -111,6 +126,7 @@ class UserUpdateInput {
     nullable: true,
   })
   wishlists?: WishlistUpdateManyWithoutUsersInput;
+>>>>>>> main
 }
 
 export { UserUpdateInput as UserUpdateInput };

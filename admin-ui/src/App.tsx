@@ -13,6 +13,8 @@ import { ListingList } from "./listing/ListingList";
 import { ListingCreate } from "./listing/ListingCreate";
 import { ListingEdit } from "./listing/ListingEdit";
 import { ListingShow } from "./listing/ListingShow";
+<<<<<<< HEAD
+=======
 import { WishlistList } from "./wishlist/WishlistList";
 import { WishlistCreate } from "./wishlist/WishlistCreate";
 import { WishlistEdit } from "./wishlist/WishlistEdit";
@@ -21,6 +23,7 @@ import { TripList } from "./trip/TripList";
 import { TripCreate } from "./trip/TripCreate";
 import { TripEdit } from "./trip/TripEdit";
 import { TripShow } from "./trip/TripShow";
+>>>>>>> main
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -40,7 +43,11 @@ const App = (): React.ReactElement => {
   return (
     <div className="App">
       <Admin
+<<<<<<< HEAD
+        title={"airbnb-1"}
+=======
         title={"airbnb-server"}
+>>>>>>> main
         dataProvider={dataProvider}
         authProvider={jwtAuthProvider}
         theme={theme}
@@ -61,6 +68,8 @@ const App = (): React.ReactElement => {
           create={ListingCreate}
           show={ListingShow}
         />
+<<<<<<< HEAD
+=======
         <Resource
           name="Wishlist"
           list={WishlistList}
@@ -75,6 +84,7 @@ const App = (): React.ReactElement => {
           create={TripCreate}
           show={TripShow}
         />
+>>>>>>> main
       </Admin>
     </div>
   );

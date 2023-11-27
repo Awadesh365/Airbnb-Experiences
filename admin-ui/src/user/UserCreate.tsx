@@ -5,6 +5,12 @@ import {
   SimpleForm,
   CreateProps,
   TextInput,
+<<<<<<< HEAD
+  PasswordInput,
+  SelectArrayInput,
+} from "react-admin";
+
+=======
   ReferenceArrayInput,
   SelectArrayInput,
   PasswordInput,
@@ -13,6 +19,7 @@ import {
 import { ListingTitle } from "../listing/ListingTitle";
 import { TripTitle } from "../trip/TripTitle";
 import { WishlistTitle } from "../wishlist/WishlistTitle";
+>>>>>>> main
 import { ROLES_OPTIONS } from "../user/RolesOptions";
 
 export const UserCreate = (props: CreateProps): React.ReactElement => {
@@ -21,6 +28,8 @@ export const UserCreate = (props: CreateProps): React.ReactElement => {
       <SimpleForm>
         <TextInput label="First Name" source="firstName" />
         <TextInput label="Last Name" source="lastName" />
+<<<<<<< HEAD
+=======
         <ReferenceArrayInput
           source="listings"
           reference="Listing"
@@ -29,6 +38,7 @@ export const UserCreate = (props: CreateProps): React.ReactElement => {
         >
           <SelectArrayInput optionText={ListingTitle} />
         </ReferenceArrayInput>
+>>>>>>> main
         <PasswordInput label="Password" source="password" />
         <SelectArrayInput
           source="roles"
@@ -36,6 +46,9 @@ export const UserCreate = (props: CreateProps): React.ReactElement => {
           optionText="label"
           optionValue="value"
         />
+<<<<<<< HEAD
+        <TextInput label="Username" source="username" />
+=======
         <ReferenceArrayInput
           source="trips"
           reference="Trip"
@@ -53,6 +66,7 @@ export const UserCreate = (props: CreateProps): React.ReactElement => {
         >
           <SelectArrayInput optionText={WishlistTitle} />
         </ReferenceArrayInput>
+>>>>>>> main
       </SimpleForm>
     </Create>
   );

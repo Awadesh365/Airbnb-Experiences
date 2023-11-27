@@ -19,6 +19,8 @@ export class Credentials {
   @Field(() => String, { nullable: false })
   password!: string;
 }
+<<<<<<< HEAD
+=======
 
 @InputType()
 export class SignupCredentials {
@@ -62,3 +64,4 @@ export class CheckUserValues {
   @Field(() => String, { nullable: false })
   email!: string;
 }
+>>>>>>> main

@@ -10,7 +10,11 @@ https://docs.amplication.com/how-to/custom-code
 ------------------------------------------------------------------------------
   */
 import { PrismaService } from "../../prisma/prisma.service";
+<<<<<<< HEAD
+import { Prisma, User } from "@prisma/client";
+=======
 import { Prisma, User, Listing, Trip, Wishlist } from "@prisma/client";
+>>>>>>> main
 import { PasswordService } from "../../auth/password.service";
 import { transformStringFieldUpdateInput } from "../../prisma.util";
 
@@ -71,6 +75,8 @@ export class UserServiceBase {
   ): Promise<User> {
     return this.prisma.user.delete(args);
   }
+<<<<<<< HEAD
+=======
 
   async findListings(
     parentId: string,
@@ -104,4 +110,5 @@ export class UserServiceBase {
       })
       .wishlists(args);
   }
+>>>>>>> main
 }

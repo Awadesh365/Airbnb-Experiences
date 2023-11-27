@@ -13,12 +13,18 @@ import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import { StringFilter } from "../../util/StringFilter";
 import { Type } from "class-transformer";
+<<<<<<< HEAD
+import { IsOptional } from "class-validator";
+import { StringNullableFilter } from "../../util/StringNullableFilter";
+import { JsonFilter } from "../../util/JsonFilter";
+=======
 import { IsOptional, ValidateNested } from "class-validator";
 import { UserWhereUniqueInput } from "../../user/base/UserWhereUniqueInput";
 import { JsonFilter } from "../../util/JsonFilter";
 import { IntFilter } from "../../util/IntFilter";
 import { TripListRelationFilter } from "../../trip/base/TripListRelationFilter";
 import { WishlistListRelationFilter } from "../../wishlist/base/WishlistListRelationFilter";
+>>>>>>> main
 
 @InputType()
 class ListingWhereInput {
@@ -31,6 +37,8 @@ class ListingWhereInput {
   @Field(() => StringFilter, {
     nullable: true,
   })
+<<<<<<< HEAD
+=======
   description?: StringFilter;
 
   @ApiProperty({
@@ -42,10 +50,21 @@ class ListingWhereInput {
   @Field(() => StringFilter, {
     nullable: true,
   })
+>>>>>>> main
   id?: StringFilter;
 
   @ApiProperty({
     required: false,
+<<<<<<< HEAD
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  listingCreatedBy?: StringNullableFilter;
+=======
     type: () => UserWhereUniqueInput,
   })
   @ValidateNested()
@@ -55,6 +74,7 @@ class ListingWhereInput {
     nullable: true,
   })
   listingCreatedBy?: UserWhereUniqueInput;
+>>>>>>> main
 
   @ApiProperty({
     required: false,
@@ -98,6 +118,9 @@ class ListingWhereInput {
   @Field(() => JsonFilter, {
     nullable: true,
   })
+<<<<<<< HEAD
+  placeAmeneties?: JsonFilter;
+=======
   photos?: JsonFilter;
 
   @ApiProperty({
@@ -110,6 +133,7 @@ class ListingWhereInput {
     nullable: true,
   })
   placeAmeneites?: JsonFilter;
+>>>>>>> main
 
   @ApiProperty({
     required: false,
@@ -131,6 +155,9 @@ class ListingWhereInput {
   @Field(() => StringFilter, {
     nullable: true,
   })
+<<<<<<< HEAD
+  placeType?: StringFilter;
+=======
   placetype?: StringFilter;
 
   @ApiProperty({
@@ -178,6 +205,7 @@ class ListingWhereInput {
     nullable: true,
   })
   wishlists?: WishlistListRelationFilter;
+>>>>>>> main
 }
 
 export { ListingWhereInput as ListingWhereInput };

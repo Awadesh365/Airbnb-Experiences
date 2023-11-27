@@ -11,6 +11,12 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
+<<<<<<< HEAD
+import { IsString, IsOptional } from "class-validator";
+import { IsJSONValue } from "@app/custom-validators";
+import { GraphQLJSON } from "graphql-type-json";
+import { InputJsonValue } from "../../types";
+=======
 import { IsString, IsOptional, ValidateNested } from "class-validator";
 import { ListingCreateNestedManyWithoutUsersInput } from "./ListingCreateNestedManyWithoutUsersInput";
 import { Type } from "class-transformer";
@@ -19,6 +25,7 @@ import { GraphQLJSON } from "graphql-type-json";
 import { InputJsonValue } from "../../types";
 import { TripCreateNestedManyWithoutUsersInput } from "./TripCreateNestedManyWithoutUsersInput";
 import { WishlistCreateNestedManyWithoutUsersInput } from "./WishlistCreateNestedManyWithoutUsersInput";
+>>>>>>> main
 
 @InputType()
 class UserCreateInput {
@@ -45,6 +52,8 @@ class UserCreateInput {
   lastName?: string | null;
 
   @ApiProperty({
+<<<<<<< HEAD
+=======
     required: false,
     type: () => ListingCreateNestedManyWithoutUsersInput,
   })
@@ -57,6 +66,7 @@ class UserCreateInput {
   listings?: ListingCreateNestedManyWithoutUsersInput;
 
   @ApiProperty({
+>>>>>>> main
     required: true,
     type: String,
   })
@@ -72,6 +82,8 @@ class UserCreateInput {
   roles!: InputJsonValue;
 
   @ApiProperty({
+<<<<<<< HEAD
+=======
     required: false,
     type: () => TripCreateNestedManyWithoutUsersInput,
   })
@@ -84,12 +96,15 @@ class UserCreateInput {
   trips?: TripCreateNestedManyWithoutUsersInput;
 
   @ApiProperty({
+>>>>>>> main
     required: true,
     type: String,
   })
   @IsString()
   @Field(() => String)
   username!: string;
+<<<<<<< HEAD
+=======
 
   @ApiProperty({
     required: false,
@@ -102,6 +117,7 @@ class UserCreateInput {
     nullable: true,
   })
   wishlists?: WishlistCreateNestedManyWithoutUsersInput;
+>>>>>>> main
 }
 
 export { UserCreateInput as UserCreateInput };

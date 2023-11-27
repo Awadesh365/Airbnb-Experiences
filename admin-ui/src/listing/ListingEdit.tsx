@@ -1,4 +1,7 @@
 import * as React from "react";
+<<<<<<< HEAD
+import { Edit, SimpleForm, EditProps, TextInput } from "react-admin";
+=======
 
 import {
   Edit,
@@ -15,11 +18,15 @@ import {
 import { UserTitle } from "../user/UserTitle";
 import { TripTitle } from "../trip/TripTitle";
 import { WishlistTitle } from "../wishlist/WishlistTitle";
+>>>>>>> main
 
 export const ListingEdit = (props: EditProps): React.ReactElement => {
   return (
     <Edit {...props}>
       <SimpleForm>
+<<<<<<< HEAD
+        <TextInput label="listingCreatedBy" source="listingCreatedBy" />
+=======
         <TextInput label="description" multiline source="description" />
         <ReferenceInput
           source="listingCreatedBy.id"
@@ -28,11 +35,15 @@ export const ListingEdit = (props: EditProps): React.ReactElement => {
         >
           <SelectInput optionText={UserTitle} />
         </ReferenceInput>
+>>>>>>> main
         <div />
         <TextInput label="locationType" source="locationType" />
         <div />
         <div />
         <div />
+<<<<<<< HEAD
+        <TextInput label="placeType" source="placeType" />
+=======
         <div />
         <TextInput label="placetype" source="placetype" />
         <NumberInput step={1} label="price" source="price" />
@@ -53,6 +64,7 @@ export const ListingEdit = (props: EditProps): React.ReactElement => {
         >
           <SelectArrayInput optionText={WishlistTitle} />
         </ReferenceArrayInput>
+>>>>>>> main
       </SimpleForm>
     </Edit>
   );

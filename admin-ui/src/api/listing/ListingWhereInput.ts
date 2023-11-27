@@ -1,4 +1,18 @@
 import { StringFilter } from "../../util/StringFilter";
+<<<<<<< HEAD
+import { StringNullableFilter } from "../../util/StringNullableFilter";
+import { JsonFilter } from "../../util/JsonFilter";
+
+export type ListingWhereInput = {
+  id?: StringFilter;
+  listingCreatedBy?: StringNullableFilter;
+  locationData?: JsonFilter;
+  locationType?: StringFilter;
+  mapData?: JsonFilter;
+  placeAmeneties?: JsonFilter;
+  placeSpace?: JsonFilter;
+  placeType?: StringFilter;
+=======
 import { UserWhereUniqueInput } from "../user/UserWhereUniqueInput";
 import { JsonFilter } from "../../util/JsonFilter";
 import { IntFilter } from "../../util/IntFilter";
@@ -20,4 +34,5 @@ export type ListingWhereInput = {
   title?: StringFilter;
   trips?: TripListRelationFilter;
   wishlists?: WishlistListRelationFilter;
+>>>>>>> main
 };

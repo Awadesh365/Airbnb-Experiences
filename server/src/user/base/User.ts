@@ -11,6 +11,13 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
+<<<<<<< HEAD
+import { IsDate, IsString, IsOptional } from "class-validator";
+import { Type } from "class-transformer";
+import { IsJSONValue } from "@app/custom-validators";
+import { GraphQLJSON } from "graphql-type-json";
+import { JsonValue } from "type-fest";
+=======
 import { IsDate, IsString, IsOptional, ValidateNested } from "class-validator";
 import { Type } from "class-transformer";
 import { Listing } from "../../listing/base/Listing";
@@ -19,6 +26,7 @@ import { GraphQLJSON } from "graphql-type-json";
 import { JsonValue } from "type-fest";
 import { Trip } from "../../trip/base/Trip";
 import { Wishlist } from "../../wishlist/base/Wishlist";
+>>>>>>> main
 
 @ObjectType()
 class User {
@@ -61,6 +69,8 @@ class User {
   lastName!: string | null;
 
   @ApiProperty({
+<<<<<<< HEAD
+=======
     required: false,
     type: () => [Listing],
   })
@@ -70,6 +80,7 @@ class User {
   listings?: Array<Listing>;
 
   @ApiProperty({
+>>>>>>> main
     required: true,
   })
   @IsJSONValue()
@@ -77,6 +88,8 @@ class User {
   roles!: JsonValue;
 
   @ApiProperty({
+<<<<<<< HEAD
+=======
     required: false,
     type: () => [Trip],
   })
@@ -86,6 +99,7 @@ class User {
   trips?: Array<Trip>;
 
   @ApiProperty({
+>>>>>>> main
     required: true,
   })
   @IsDate()
@@ -100,6 +114,8 @@ class User {
   @IsString()
   @Field(() => String)
   username!: string;
+<<<<<<< HEAD
+=======
 
   @ApiProperty({
     required: false,
@@ -109,6 +125,7 @@ class User {
   @Type(() => Wishlist)
   @IsOptional()
   wishlists?: Array<Wishlist>;
+>>>>>>> main
 }
 
 export { User as User };

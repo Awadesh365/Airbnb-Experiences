@@ -27,6 +27,11 @@ import { ListingWhereUniqueInput } from "./ListingWhereUniqueInput";
 import { ListingFindManyArgs } from "./ListingFindManyArgs";
 import { ListingUpdateInput } from "./ListingUpdateInput";
 import { Listing } from "./Listing";
+<<<<<<< HEAD
+
+@swagger.ApiBearerAuth()
+@common.UseGuards(defaultAuthGuard.DefaultAuthGuard, nestAccessControl.ACGuard)
+=======
 import { TripFindManyArgs } from "../../trip/base/TripFindManyArgs";
 import { Trip } from "../../trip/base/Trip";
 import { TripWhereUniqueInput } from "../../trip/base/TripWhereUniqueInput";
@@ -34,16 +39,20 @@ import { WishlistFindManyArgs } from "../../wishlist/base/WishlistFindManyArgs";
 import { Wishlist } from "../../wishlist/base/Wishlist";
 import { WishlistWhereUniqueInput } from "../../wishlist/base/WishlistWhereUniqueInput";
 
+>>>>>>> main
 export class ListingControllerBase {
   constructor(
     protected readonly service: ListingService,
     protected readonly rolesBuilder: nestAccessControl.RolesBuilder
   ) {}
+<<<<<<< HEAD
+=======
   @common.UseGuards(
     defaultAuthGuard.DefaultAuthGuard,
     nestAccessControl.ACGuard
   )
   @swagger.ApiBearerAuth()
+>>>>>>> main
   @common.UseInterceptors(AclValidateRequestInterceptor)
   @common.Post()
   @swagger.ApiCreatedResponse({ type: Listing })
@@ -57,6 +66,19 @@ export class ListingControllerBase {
   })
   async create(@common.Body() data: ListingCreateInput): Promise<Listing> {
     return await this.service.create({
+<<<<<<< HEAD
+      data: data,
+      select: {
+        createdAt: true,
+        id: true,
+        listingCreatedBy: true,
+        locationData: true,
+        locationType: true,
+        mapData: true,
+        placeAmeneties: true,
+        placeSpace: true,
+        placeType: true,
+=======
       data: {
         ...data,
 
@@ -84,11 +106,26 @@ export class ListingControllerBase {
         placetype: true,
         price: true,
         title: true,
+>>>>>>> main
         updatedAt: true,
       },
     });
   }
 
+<<<<<<< HEAD
+  @common.UseInterceptors(AclFilterResponseInterceptor)
+  @common.Get()
+  @swagger.ApiOkResponse({ type: [Listing] })
+  @ApiNestedQuery(ListingFindManyArgs)
+  @nestAccessControl.UseRoles({
+    resource: "Listing",
+    action: "read",
+    possession: "any",
+  })
+  @swagger.ApiForbiddenResponse({
+    type: errors.ForbiddenException,
+  })
+=======
   // @common.UseInterceptors(AclFilterResponseInterceptor)
   @common.Get()
   @swagger.ApiOkResponse({ type: [Listing] })
@@ -101,12 +138,23 @@ export class ListingControllerBase {
   // @swagger.ApiForbiddenResponse({
   //   type: errors.ForbiddenException,
   // })
+>>>>>>> main
   async findMany(@common.Req() request: Request): Promise<Listing[]> {
     const args = plainToClass(ListingFindManyArgs, request.query);
     return this.service.findMany({
       ...args,
       select: {
         createdAt: true,
+<<<<<<< HEAD
+        id: true,
+        listingCreatedBy: true,
+        locationData: true,
+        locationType: true,
+        mapData: true,
+        placeAmeneties: true,
+        placeSpace: true,
+        placeType: true,
+=======
         description: true,
         id: true,
 
@@ -125,11 +173,26 @@ export class ListingControllerBase {
         placetype: true,
         price: true,
         title: true,
+>>>>>>> main
         updatedAt: true,
       },
     });
   }
 
+<<<<<<< HEAD
+  @common.UseInterceptors(AclFilterResponseInterceptor)
+  @common.Get("/:id")
+  @swagger.ApiOkResponse({ type: Listing })
+  @swagger.ApiNotFoundResponse({ type: errors.NotFoundException })
+  @nestAccessControl.UseRoles({
+    resource: "Listing",
+    action: "read",
+    possession: "own",
+  })
+  @swagger.ApiForbiddenResponse({
+    type: errors.ForbiddenException,
+  })
+=======
   // @common.UseInterceptors(AclFilterResponseInterceptor)
   @common.Get("/:id")
   @swagger.ApiOkResponse({ type: Listing })
@@ -142,6 +205,7 @@ export class ListingControllerBase {
   // @swagger.ApiForbiddenResponse({
   //   type: errors.ForbiddenException,
   // })
+>>>>>>> main
   async findOne(
     @common.Param() params: ListingWhereUniqueInput
   ): Promise<Listing | null> {
@@ -149,6 +213,16 @@ export class ListingControllerBase {
       where: params,
       select: {
         createdAt: true,
+<<<<<<< HEAD
+        id: true,
+        listingCreatedBy: true,
+        locationData: true,
+        locationType: true,
+        mapData: true,
+        placeAmeneties: true,
+        placeSpace: true,
+        placeType: true,
+=======
         description: true,
         id: true,
 
@@ -169,6 +243,7 @@ export class ListingControllerBase {
         placetype: true,
         price: true,
         title: true,
+>>>>>>> main
         updatedAt: true,
       },
     });
@@ -192,11 +267,14 @@ export class ListingControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+<<<<<<< HEAD
+=======
   @common.UseGuards(
     defaultAuthGuard.DefaultAuthGuard,
     nestAccessControl.ACGuard
   )
   @swagger.ApiBearerAuth()
+>>>>>>> main
   async update(
     @common.Param() params: ListingWhereUniqueInput,
     @common.Body() data: ListingUpdateInput
@@ -204,6 +282,19 @@ export class ListingControllerBase {
     try {
       return await this.service.update({
         where: params,
+<<<<<<< HEAD
+        data: data,
+        select: {
+          createdAt: true,
+          id: true,
+          listingCreatedBy: true,
+          locationData: true,
+          locationType: true,
+          mapData: true,
+          placeAmeneties: true,
+          placeSpace: true,
+          placeType: true,
+=======
         data: {
           ...data,
 
@@ -231,6 +322,7 @@ export class ListingControllerBase {
           placetype: true,
           price: true,
           title: true,
+>>>>>>> main
           updatedAt: true,
         },
       });
@@ -255,11 +347,14 @@ export class ListingControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+<<<<<<< HEAD
+=======
   @common.UseGuards(
     defaultAuthGuard.DefaultAuthGuard,
     nestAccessControl.ACGuard
   )
   @swagger.ApiBearerAuth()
+>>>>>>> main
   async delete(
     @common.Param() params: ListingWhereUniqueInput
   ): Promise<Listing | null> {
@@ -268,6 +363,16 @@ export class ListingControllerBase {
         where: params,
         select: {
           createdAt: true,
+<<<<<<< HEAD
+          id: true,
+          listingCreatedBy: true,
+          locationData: true,
+          locationType: true,
+          mapData: true,
+          placeAmeneties: true,
+          placeSpace: true,
+          placeType: true,
+=======
           description: true,
           id: true,
 
@@ -286,6 +391,7 @@ export class ListingControllerBase {
           placetype: true,
           price: true,
           title: true,
+>>>>>>> main
           updatedAt: true,
         },
       });
@@ -298,6 +404,8 @@ export class ListingControllerBase {
       throw error;
     }
   }
+<<<<<<< HEAD
+=======
 
   @common.UseInterceptors(AclFilterResponseInterceptor)
   @common.Get("/:id/trips")
@@ -515,4 +623,5 @@ export class ListingControllerBase {
       select: { id: true },
     });
   }
+>>>>>>> main
 }

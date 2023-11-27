@@ -11,6 +11,13 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
+<<<<<<< HEAD
+import { IsDate, IsString, IsOptional } from "class-validator";
+import { Type } from "class-transformer";
+import { IsJSONValue } from "@app/custom-validators";
+import { GraphQLJSON } from "graphql-type-json";
+import { JsonValue } from "type-fest";
+=======
 import {
   IsDate,
   IsString,
@@ -25,6 +32,7 @@ import { GraphQLJSON } from "graphql-type-json";
 import { JsonValue } from "type-fest";
 import { Trip } from "../../trip/base/Trip";
 import { Wishlist } from "../../wishlist/base/Wishlist";
+>>>>>>> main
 
 @ObjectType()
 class Listing {
@@ -42,6 +50,20 @@ class Listing {
   })
   @IsString()
   @Field(() => String)
+<<<<<<< HEAD
+  id!: string;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  listingCreatedBy!: string | null;
+=======
   description!: string;
 
   @ApiProperty({
@@ -59,6 +81,7 @@ class Listing {
   @ValidateNested()
   @Type(() => User)
   listingCreatedBy?: User;
+>>>>>>> main
 
   @ApiProperty({
     required: true,
@@ -87,6 +110,9 @@ class Listing {
   })
   @IsJSONValue()
   @Field(() => GraphQLJSON)
+<<<<<<< HEAD
+  placeAmeneties!: JsonValue;
+=======
   photos!: JsonValue;
 
   @ApiProperty({
@@ -95,6 +121,7 @@ class Listing {
   @IsJSONValue()
   @Field(() => GraphQLJSON)
   placeAmeneites!: JsonValue;
+>>>>>>> main
 
   @ApiProperty({
     required: true,
@@ -109,6 +136,9 @@ class Listing {
   })
   @IsString()
   @Field(() => String)
+<<<<<<< HEAD
+  placeType!: string;
+=======
   placetype!: string;
 
   @ApiProperty({
@@ -135,6 +165,7 @@ class Listing {
   @Type(() => Trip)
   @IsOptional()
   trips?: Array<Trip>;
+>>>>>>> main
 
   @ApiProperty({
     required: true,
@@ -143,6 +174,8 @@ class Listing {
   @Type(() => Date)
   @Field(() => Date)
   updatedAt!: Date;
+<<<<<<< HEAD
+=======
 
   @ApiProperty({
     required: false,
@@ -152,6 +185,7 @@ class Listing {
   @Type(() => Wishlist)
   @IsOptional()
   wishlists?: Array<Wishlist>;
+>>>>>>> main
 }
 
 export { Listing as Listing };

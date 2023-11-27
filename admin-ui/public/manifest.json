@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
+  "short_name": "airbnb-1",
+  "name": "airbnb-1",
+=======
   "short_name": "airbnb-server",
   "name": "airbnb-server",
+>>>>>>> main
   "icons": [
     {
       "src": "favicon.ico",

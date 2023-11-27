@@ -11,6 +11,12 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
+<<<<<<< HEAD
+import { IsString, IsOptional } from "class-validator";
+import { IsJSONValue } from "@app/custom-validators";
+import { GraphQLJSON } from "graphql-type-json";
+import { InputJsonValue } from "../../types";
+=======
 import { IsString, IsOptional, ValidateNested, IsInt } from "class-validator";
 import { UserWhereUniqueInput } from "../../user/base/UserWhereUniqueInput";
 import { Type } from "class-transformer";
@@ -19,6 +25,7 @@ import { GraphQLJSON } from "graphql-type-json";
 import { InputJsonValue } from "../../types";
 import { TripUpdateManyWithoutListingsInput } from "./TripUpdateManyWithoutListingsInput";
 import { WishlistUpdateManyWithoutListingsInput } from "./WishlistUpdateManyWithoutListingsInput";
+>>>>>>> main
 
 @InputType()
 class ListingUpdateInput {
@@ -31,6 +38,9 @@ class ListingUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
+<<<<<<< HEAD
+  listingCreatedBy?: string | null;
+=======
   description?: string;
 
   @ApiProperty({
@@ -44,6 +54,7 @@ class ListingUpdateInput {
     nullable: true,
   })
   listingCreatedBy?: UserWhereUniqueInput;
+>>>>>>> main
 
   @ApiProperty({
     required: false,
@@ -84,6 +95,9 @@ class ListingUpdateInput {
   @Field(() => GraphQLJSON, {
     nullable: true,
   })
+<<<<<<< HEAD
+  placeAmeneties?: InputJsonValue;
+=======
   photos?: InputJsonValue;
 
   @ApiProperty({
@@ -95,6 +109,7 @@ class ListingUpdateInput {
     nullable: true,
   })
   placeAmeneites?: InputJsonValue;
+>>>>>>> main
 
   @ApiProperty({
     required: false,
@@ -115,6 +130,9 @@ class ListingUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
+<<<<<<< HEAD
+  placeType?: string;
+=======
   placetype?: string;
 
   @ApiProperty({
@@ -162,6 +180,7 @@ class ListingUpdateInput {
     nullable: true,
   })
   wishlists?: WishlistUpdateManyWithoutListingsInput;
+>>>>>>> main
 }
 
 export { ListingUpdateInput as ListingUpdateInput };

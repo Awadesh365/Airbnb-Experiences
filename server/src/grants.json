@@ -30,64 +30,81 @@
     "attributes": "*"
   },
   {
+<<<<<<< HEAD
+=======
     "role": "airbnbUser",
     "resource": "Listing",
     "action": "read:own",
     "attributes": "*"
   },
   {
+>>>>>>> main
     "role": "user",
     "resource": "Listing",
     "action": "read:own",
     "attributes": "*"
   },
   {
+<<<<<<< HEAD
+=======
     "role": "airbnbUser",
     "resource": "Listing",
     "action": "create:any",
     "attributes": "*"
   },
   {
+>>>>>>> main
     "role": "user",
     "resource": "Listing",
     "action": "create:any",
     "attributes": "*"
   },
   {
+<<<<<<< HEAD
+=======
     "role": "airbnbUser",
     "resource": "Listing",
     "action": "update:any",
     "attributes": "*"
   },
   {
+>>>>>>> main
     "role": "user",
     "resource": "Listing",
     "action": "update:any",
     "attributes": "*"
   },
   {
+<<<<<<< HEAD
+=======
     "role": "airbnbUser",
     "resource": "Listing",
     "action": "delete:any",
     "attributes": "*"
   },
   {
+>>>>>>> main
     "role": "user",
     "resource": "Listing",
     "action": "delete:any",
     "attributes": "*"
   },
   {
+<<<<<<< HEAD
+=======
     "role": "airbnbUser",
     "resource": "Listing",
     "action": "read:any",
     "attributes": "*"
   },
   {
+>>>>>>> main
     "role": "user",
     "resource": "Listing",
     "action": "read:any",
     "attributes": "*"
+<<<<<<< HEAD
+=======
   },
   {
     "role": "airbnbUser",
@@ -208,5 +225,6 @@
     "resource": "Trip",
     "action": "read:any",
     "attributes": "*"
+>>>>>>> main
   }
 ]

@@ -10,7 +10,11 @@ https://docs.amplication.com/how-to/custom-code
 ------------------------------------------------------------------------------
   */
 import { PrismaService } from "../../prisma/prisma.service";
+<<<<<<< HEAD
+import { Prisma, Listing } from "@prisma/client";
+=======
 import { Prisma, Listing, Trip, Wishlist, User } from "@prisma/client";
+>>>>>>> main
 
 export class ListingServiceBase {
   constructor(protected readonly prisma: PrismaService) {}
@@ -46,6 +50,8 @@ export class ListingServiceBase {
   ): Promise<Listing> {
     return this.prisma.listing.delete(args);
   }
+<<<<<<< HEAD
+=======
 
   async findTrips(
     parentId: string,
@@ -76,4 +82,5 @@ export class ListingServiceBase {
       })
       .listingCreatedBy();
   }
+>>>>>>> main
 }

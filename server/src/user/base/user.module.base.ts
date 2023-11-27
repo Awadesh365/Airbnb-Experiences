@@ -9,6 +9,13 @@ https://docs.amplication.com/how-to/custom-code
 
 ------------------------------------------------------------------------------
   */
+<<<<<<< HEAD
+import { Module } from "@nestjs/common";
+import { ACLModule } from "../../auth/acl.module";
+@Module({
+  imports: [ACLModule],
+  exports: [ACLModule],
+=======
 import { Module, forwardRef } from "@nestjs/common";
 import { MorganModule } from "nest-morgan";
 import { ACLModule } from "../../auth/acl.module";
@@ -16,5 +23,6 @@ import { AuthModule } from "../../auth/auth.module";
 @Module({
   imports: [ACLModule, forwardRef(() => AuthModule), MorganModule],
   exports: [ACLModule, AuthModule, MorganModule],
+>>>>>>> main
 })
 export class UserModuleBase {}

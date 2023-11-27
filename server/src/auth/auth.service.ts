@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+import { Injectable, UnauthorizedException } from "@nestjs/common";
+import { Credentials } from "./Credentials";
+import { PasswordService } from "./password.service";
+import { TokenService } from "./token.service";
+import { UserInfo } from "./UserInfo";
+import { UserService } from "../user/user.service";
+=======
 import {
   Injectable,
   NotFoundException,
@@ -12,13 +20,20 @@ import { PasswordService } from "./password.service";
 import { TokenService } from "./token.service";
 import { UserInfo } from "./UserInfo";
 import { User } from "src/user/base/User";
+>>>>>>> main
 
 @Injectable()
 export class AuthService {
   constructor(
+<<<<<<< HEAD
+    private readonly passwordService: PasswordService,
+    private readonly tokenService: TokenService,
+    private readonly userService: UserService
+=======
     private readonly userService: UserService,
     private readonly passwordService: PasswordService,
     private readonly tokenService: TokenService
+>>>>>>> main
   ) {}
 
   async validateUser(
@@ -54,6 +69,8 @@ export class AuthService {
       ...user,
     };
   }
+<<<<<<< HEAD
+=======
   async signup(credentials: SignupCredentials): Promise<UserInfo> {
     // Extract the username and password from the body of the request
     const { username, password, firstName, lastName } = credentials;
@@ -119,4 +136,5 @@ export class AuthService {
 
     return userStatus;
   }
+>>>>>>> main
 }

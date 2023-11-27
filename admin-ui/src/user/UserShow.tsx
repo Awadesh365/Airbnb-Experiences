@@ -1,11 +1,18 @@
 import * as React from "react";
+<<<<<<< HEAD
+=======
 
+>>>>>>> main
 import {
   Show,
   SimpleShowLayout,
   ShowProps,
   DateField,
   TextField,
+<<<<<<< HEAD
+} from "react-admin";
+
+=======
   ReferenceManyField,
   Datagrid,
   ReferenceField,
@@ -14,6 +21,7 @@ import {
 import { USER_TITLE_FIELD } from "./UserTitle";
 import { LISTING_TITLE_FIELD } from "../listing/ListingTitle";
 
+>>>>>>> main
 export const UserShow = (props: ShowProps): React.ReactElement => {
   return (
     <Show {...props}>
@@ -25,6 +33,8 @@ export const UserShow = (props: ShowProps): React.ReactElement => {
         <TextField label="Roles" source="roles" />
         <DateField source="updatedAt" label="Updated At" />
         <TextField label="Username" source="username" />
+<<<<<<< HEAD
+=======
         <ReferenceManyField
           reference="Listing"
           target="listingCreatedById"
@@ -92,6 +102,7 @@ export const UserShow = (props: ShowProps): React.ReactElement => {
             </ReferenceField>
           </Datagrid>
         </ReferenceManyField>
+>>>>>>> main
       </SimpleShowLayout>
     </Show>
   );

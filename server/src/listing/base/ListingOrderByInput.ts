@@ -39,6 +39,8 @@ class ListingOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
+<<<<<<< HEAD
+=======
   description?: SortOrder;
 
   @ApiProperty({
@@ -50,6 +52,7 @@ class ListingOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
+>>>>>>> main
   id?: SortOrder;
 
   @ApiProperty({
@@ -61,7 +64,11 @@ class ListingOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
+<<<<<<< HEAD
+  listingCreatedBy?: SortOrder;
+=======
   listingCreatedById?: SortOrder;
+>>>>>>> main
 
   @ApiProperty({
     required: false,
@@ -105,6 +112,9 @@ class ListingOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
+<<<<<<< HEAD
+  placeAmeneties?: SortOrder;
+=======
   photos?: SortOrder;
 
   @ApiProperty({
@@ -117,6 +127,7 @@ class ListingOrderByInput {
     nullable: true,
   })
   placeAmeneites?: SortOrder;
+>>>>>>> main
 
   @ApiProperty({
     required: false,
@@ -138,6 +149,9 @@ class ListingOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
+<<<<<<< HEAD
+  placeType?: SortOrder;
+=======
   placetype?: SortOrder;
 
   @ApiProperty({
@@ -161,6 +175,7 @@ class ListingOrderByInput {
     nullable: true,
   })
   title?: SortOrder;
+>>>>>>> main
 
   @ApiProperty({
     required: false,

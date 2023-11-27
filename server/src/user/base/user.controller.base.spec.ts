@@ -6,7 +6,10 @@ import {
   CallHandler,
 } from "@nestjs/common";
 import request from "supertest";
+<<<<<<< HEAD
+=======
 import { MorganModule } from "nest-morgan";
+>>>>>>> main
 import { ACGuard } from "nest-access-control";
 import { DefaultAuthGuard } from "../../auth/defaultAuth.guard";
 import { ACLModule } from "../../auth/acl.module";
@@ -116,7 +119,11 @@ describe("User", () => {
         },
       ],
       controllers: [UserController],
+<<<<<<< HEAD
+      imports: [ACLModule],
+=======
       imports: [MorganModule.forRoot(), ACLModule],
+>>>>>>> main
     })
       .overrideGuard(DefaultAuthGuard)
       .useValue(basicAuthGuard)
@@ -180,7 +187,11 @@ describe("User", () => {
   });
 
   test("POST /users existing resource", async () => {
+<<<<<<< HEAD
+    const agent = request(app.getHttpServer());
+=======
     let agent = request(app.getHttpServer());
+>>>>>>> main
     await agent
       .post("/users")
       .send(CREATE_INPUT)
