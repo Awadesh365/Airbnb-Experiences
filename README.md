@@ -1,6 +1,4 @@
 
-This Project is Live at: https://airbnb-clone-with-nextjs.vercel.app/
-
 ppt:- https://docs.google.com/presentation/d/1ZzKxkuP4u5V5YTvUp47xx7Nl0wQQFqthMcZSZWh67g0/edit?usp=drivesdk.
 
 
